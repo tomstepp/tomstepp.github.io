@@ -5,10 +5,10 @@ body{
 
 h1 {
 	color: blue;
-	position: center;
+	text-align: center;
 }
 
 h2 {
-	color: lightblue;
+	color: blue;
 	position: center;
 }
