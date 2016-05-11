@@ -20,7 +20,8 @@
 .container-fluid {
     padding-top: 30px;
     padding-bottom: 100px;
-    height: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .navbar {
     padding-top: 0px;
