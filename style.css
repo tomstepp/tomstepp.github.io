@@ -178,12 +178,38 @@ p{
 .carousel{
 		background: black;
 		color: white;
+		background: white;
+		color: black;
 		padding: 20px;
 }
 .carousel p{
 		margin-left: 100px;
 		margin-right: 100px;
 }
+
+.carousel-control .glyphicon,
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  color: black;
+}
+
+.carousel-indicators li {
+    background: #ccc;
+}
+
+.carousel-indicators .active {
+    background: #666;
+}
+
 .carousel{
 		width: auto;
   	height: 500px;
