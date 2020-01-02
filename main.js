@@ -32,7 +32,7 @@ function handleContactSubmission() {
     var subject = $('input[name=subject]').val();
     var message = $('textarea[name=message]').val();
 
-    var url = 'mailto:steppt@purdue.edu?&subject=' + first + ' ' + last + ': ' + subject + '&body=' + message;
+    var url = 'mailto:thomas.j.stepp@gmail.com?&subject=' + first + ' ' + last + ': ' + subject + '&body=' + message;
 
     var win = window.open(url, '_blank');
     win.focus();
