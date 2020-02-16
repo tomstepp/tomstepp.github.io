@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158658380-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-158658380-1');
+  </script>
+
   <title>Tom Stepp</title>
 
   <meta charset="utf-8">
@@ -17,268 +31,269 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="main.js"></script>
 </head>
+
 <body>
 
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Me</a>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Me</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#edu">EDUCATION</a></li>
+          <li><a href="#work">WORK</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#leader">LEADER</a></li>
+          <li><a href="#resume">RESUME</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#edu">EDUCATION</a></li>
-        <li><a href="#work">WORK</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-        <li><a href="#leader">LEADER</a></li>
-        <li><a href="#resume">RESUME</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="container-fluid bg-1 text-center">
+    <p><br></p>
+    <h1 style="font-size: 60px">Thomas J. Stepp</h1>
+    <img class="img-circle" src="img/ThomasStepp.jpg" alt="ME" style="width:200px;height:200px;">
+    <p><br></p>
+
+    <a href="https://www.linkedin.com/in/tomstepp" class="btn btn-default btn-lg">
+      <img class="logos" src="img/linkedin.png" style="width:25px;height:25px;">
+      LinkedIn
+    </a>
+    <a href="https://github.com/tomstepp" class="btn btn-default btn-lg">
+      <img class="logos" src="img/github.png" style="width:25px;height:25px;">
+      GitHub
+    </a>
+    <a href="resume.pdf" class="btn btn-default btn-lg">
+      <img class="logos" src="img/resume.png" style="width:25px;height:25px;">
+      Resume
+    </a>
+    <p><br></p>
+
+
+    <div>
+
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 well well-sm" style="background: rgba(0,0,0,0.2)">
+          <h3><u>About Me</u></h3>
+          <p>
+            Currently a software engineer at Boeing & pursuing my masters degree in computer science at USC.
+            Purdue University graduate with degree in Electrical Engineering, and many software courses.
+            I would like to make a positive impact on the world by solving problems via software in fields such as tech, health, and aviation.
+          </p>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
     </div>
-  </div>
-</nav>
 
-<!-- HEADER -->
-<div class="container-fluid bg-1 text-center">
-	<p><br></p>
-  <h1 style="font-size: 60px">Thomas J. Stepp</h1>
-  <img class="img-circle" src="img/ThomasStepp.jpg" alt="ME" style="width:200px;height:200px;">
-	<p><br></p>
-
-  <a href="https://www.linkedin.com/in/tomstepp" class="btn btn-default btn-lg">
-  	<img class="logos" src="img/linkedin.png" style="width:25px;height:25px;">
-  	LinkedIn
-  </a>
-  <a href="https://github.com/tomstepp" class="btn btn-default btn-lg">
-  	<img class="logos" src="img/github.png" style="width:25px;height:25px;">
-  	GitHub
-  </a>
-  <a href="resume.pdf" class="btn btn-default btn-lg">
-  	<img class="logos" src="img/resume.png" style="width:25px;height:25px;">
-  	Resume
-  </a>
-		<p><br></p>
-
-
-  <div >
-
-  <div class="row">
-		<div class="col-sm-2"></div>
-		<div class="col-sm-8 well well-sm" style="background: rgba(0,0,0,0.2)">
-			<h3><u>About Me</u></h3>
-  		<p>
-  			Currently a software engineer at Boeing & pursuing my masters degree in computer science at USC.
-			Purdue University graduate with degree in Electrical Engineering, and many software courses.
-			I would like to make a positive impact on the world by solving problems via software in fields such as tech, health, and aviation.
-			</p>
-		</div>
-		<div class="col-sm-2"></div>
-		</div>
-	</div>
-
-</div>
-
-<!-- EDUCATION -->
-<div id="edu" class="container-fluid bg-3">
-
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-
-  <h1 id="timeline">Education</h1>
-  <p>See where I spent time studying and gained early knowledge to prepare for my professional life.</p>
-  <p><br><br></p>
-
-  <div class="col-sm-6">
-    <div class="col-sm-4">
-      <img src="img/usc.png" alt="USC" style="width:100px;height:100px;">
-    </div>
-    <div class="col-sm-8" style="text-align: left">
-      <p>2018-2021</p>
-      <h4>University of Southern California</h4>
-      <p>Computer Science</p>
-    </div>
-    <div class="col-sm-12 well" style="text-align: left">
-    <p>
-      Remote/Online student.<br>
-      • Programming System Design<br>
-      • Computer Networks<br>
-      • Algorithm Design<br>
-      • Web Technologies<br>
-      • Database Systems<br>
-    </p>
-    </div>
   </div>
 
-  	<div class="col-sm-6">
-			<div class="col-sm-4">
-				<img src="img/purdue.png" alt="Purdue" style="width:100px;height:100px;">
-			</div>
-			<div class="col-sm-8" style="text-align: left">
-				<p>2013-2017</p>
-				<h4>Purdue University</h4>
-				<p>Electrical Engineering</p>
-			</div>
-			<div class="col-sm-12 well" style="text-align: left">
-			<p>
-				An active member of ECE Student Society and leader through the Publicity Committee Chair role.
-				I also participate in IEEE events to further develop my classroom knowledge and develop skills through hands-on projects.
-				Lastly I enjoy the outdoors through Purdue Outing Club.
-			</p>
-			</div>
-  	</div>
+  <!-- EDUCATION -->
+  <div id="edu" class="container-fluid bg-3">
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+        <h1 id="timeline">Education</h1>
+        <p>See where I spent time studying and gained early knowledge to prepare for my professional life.</p>
+        <p><br><br></p>
+
+        <div class="col-sm-6">
+          <div class="col-sm-4">
+            <img src="img/usc.png" alt="USC" style="width:100px;height:100px;">
+          </div>
+          <div class="col-sm-8" style="text-align: left">
+            <p>2018-2021</p>
+            <h4>University of Southern California</h4>
+            <p>Computer Science</p>
+          </div>
+          <div class="col-sm-12 well" style="text-align: left">
+            <p>
+              Remote/Online student.<br>
+              • Programming System Design<br>
+              • Computer Networks<br>
+              • Algorithm Design<br>
+              • Web Technologies<br>
+              • Database Systems<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="col-sm-4">
+            <img src="img/purdue.png" alt="Purdue" style="width:100px;height:100px;">
+          </div>
+          <div class="col-sm-8" style="text-align: left">
+            <p>2013-2017</p>
+            <h4>Purdue University</h4>
+            <p>Electrical Engineering</p>
+          </div>
+          <div class="col-sm-12 well" style="text-align: left">
+            <p>
+              An active member of ECE Student Society and leader through the Publicity Committee Chair role.
+              I also participate in IEEE events to further develop my classroom knowledge and develop skills through hands-on projects.
+              Lastly I enjoy the outdoors through Purdue Outing Club.
+            </p>
+          </div>
+        </div>
 
 
-  	<div class="col-sm-6">
-			<div class="col-sm-4">
-				<img src="img/uc3m.png" alt="UC3M" style="width:100px;height:100px;">
-			</div>
-			<div class="col-sm-8" style="text-align: left">
-				<p>Spring 2016</p>
-				<h4>Universidad Carlos III</h4>
-				<p>Informatics Engineering</p>
-			</div>
-			<div class="col-sm-12 well" style="text-align: left">
-			<p>
-				 I studied at UC3M for a semester to challenge myself and obtain a more global perspective of the world.
-				 It's important as an engineer to be able to adapt and learn in new environments.
-				 I also developed my intercultural awareness skills which are important to use in engineering design.
-			</p>
-			</div>
-  	</div>
-  </div>
-  <div class="col-md-2"></div>
-  </div>
-  <!-- end row //-->
-</div>
-
-<!-- WORK -->
-<div id="work" class="container-fluid bg-2">
-
-	<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-
-    <div class="page-header">
-        <h1 id="timeline">Professional Experience</h1>
-        <p>
-        Explore my professional history and get to know the companies
-        I worked at and the roles and responsibilities I've been assigned.
-        </p>
+        <div class="col-sm-6">
+          <div class="col-sm-4">
+            <img src="img/uc3m.png" alt="UC3M" style="width:100px;height:100px;">
+          </div>
+          <div class="col-sm-8" style="text-align: left">
+            <p>Spring 2016</p>
+            <h4>Universidad Carlos III</h4>
+            <p>Informatics Engineering</p>
+          </div>
+          <div class="col-sm-12 well" style="text-align: left">
+            <p>
+              I studied at UC3M for a semester to challenge myself and obtain a more global perspective of the world.
+              It's important as an engineer to be able to adapt and learn in new environments.
+              I also developed my intercultural awareness skills which are important to use in engineering design.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
     </div>
-    <ul class="timeline">
-        <li  class="timeline-inverted">
-          <div class="timeline-badge"><img src="img/boeing.jpg" alt="Boeing" style="width:60px;height:60px;"></div>
-          <a href="#boeing" data-toggle="collapse" style="color:white">
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">Boeing</h3>
-              <h4 class="timeline-title">Software Engineer</h4>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Fall 2017 - Present </small></p>
-            </div>
+    <!-- end row //-->
+  </div>
+
+  <!-- WORK -->
+  <div id="work" class="container-fluid bg-2">
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+        <div class="page-header">
+          <h1 id="timeline">Professional Experience</h1>
+          <p>
+            Explore my professional history and get to know the companies
+            I worked at and the roles and responsibilities I've been assigned.
+          </p>
+        </div>
+        <ul class="timeline">
+          <li class="timeline-inverted">
+            <div class="timeline-badge"><img src="img/boeing.jpg" alt="Boeing" style="width:60px;height:60px;"></div>
+            <a href="#boeing" data-toggle="collapse" style="color:white">
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3 class="timeline-title">Boeing</h3>
+                  <h4 class="timeline-title">Software Engineer</h4>
+                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Fall 2017 - Present </small></p>
+                </div>
             </a>
             <div id="boeing" class="timeline-body collapse">
               <p>
-              • Architect of continuous integration suite for flight software team of 150 developers<br>
-              • Streamlined integration from 10 to 1.5 hours via code generation, parallel toolbox, and caching server<br>
-              • Build Matlab/Simulink development tools such as the signal manager and message logger<br>
-              • Continuous improvement and support of integrated simulation for testing of system design<br>
-              • Plan and lead team through software upgrades of Matlab, Atlassian products, and Git<br>
-              • Scrum master for Model-Based Development Processes and Tools team<br>
+                • Architect of continuous integration suite for flight software team of 150 developers<br>
+                • Streamlined integration from 10 to 1.5 hours via code generation, parallel toolbox, and caching server<br>
+                • Build Matlab/Simulink development tools such as the signal manager and message logger<br>
+                • Continuous improvement and support of integrated simulation for testing of system design<br>
+                • Plan and lead team through software upgrades of Matlab, Atlassian products, and Git<br>
+                • Scrum master for Model-Based Development Processes and Tools team<br>
               </p>
             </div>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-badge"><img src="img/facebook.png" alt="FB" style="width:60px;height:60px;"></div>
-          <a href="#fb" data-toggle="collapse" style="color:white">
+      </div>
+      </li>
+      <li>
+        <div class="timeline-badge"><img src="img/facebook.png" alt="FB" style="width:60px;height:60px;"></div>
+        <a href="#fb" data-toggle="collapse" style="color:white">
           <div class="timeline-panel">
             <div class="timeline-heading">
               <h3 class="timeline-title">Facebook</h3>
               <h4 class="timeline-title">Network Engineer Intern</h4>
               <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Summer 2016 </small></p>
             </div>
-            </a>
-            <div id="fb" class="timeline-body collapse">
-              <p>
-		• Created scripts for automation of network switch testing with Tcl and Ixia hardware API<br>
-		• Developed driver for IC chip with C++ to improve Wedge100 switch function and reliability<br>
-		• Assisted with switch setup and procedure standards to maximize the team’s productivity
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-badge"><img src="img/ge.png" alt="GE" style="width:60px;height:60px;"></div>
-          <a href="#ge" data-toggle="collapse" style="color:white">
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">GE Aviation</h3>
-              <h4 class="timeline-title">Systems Engineer Intern</h4>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Summer 2015 </small></p>
-            </div>
-            </a>
-            <div id="ge" class="timeline-body collapse">
-              <p>
-              • Produced software tools to automate test validation for LEAP and Passport 20 engines<br>
-		• Supported certification documentation for pressure cycling tests and fire tests to meet FAA rules and regulations
-		<br>• Strengthened user interface for the GE Intern Onboarding app on Android OS
-              </p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-badge"><img src="img/mcd.png" alt="mcd" style="width:60px;height:60px;"></div>
-          <a href="#mcd" data-toggle="collapse" style="color:white">
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h3 class="timeline-title">McDonald's Corporation</h3>
-              <h4 class="timeline-title">Data Analyst Consultant</h4>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Summer 2014 </small></p>
-            </div>
-            </a>
-            <div id="mcd" class="timeline-body collapse">
-							<p>
-							• Collaborated with team for testing and issue resolution of the e-Procurement website (the Marketplace)<br>
-							• Created a process to standardize the financial coding of 20,000 products sold on the Marketplace<br>
-							• Developed reporting to show purchasing trends on the new system in comparison to the old system
-							</p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-        <div class="timeline-badge"><img src="img/purdue.png" alt="mcd" style="width:60px;height:60px;"></div>
-          <a href="#pdu" data-toggle="collapse" style="color:white">
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-             	<h3 class="timeline-title">Wiley Dining Court</h3>
-              <h4 class="timeline-title">Student Associate</h4>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Fall 2013 </small></p>
-            </div>
-            </a>
-            <div id="pdu" class="timeline-body collapse">
-              <p>
-								• Collaborated with colleagues to assign daily tasks, making sure no one had to work past his or her hours<br>
-								• Provided food and cleaning services to thousands of students<br>
-								• Worked in a team to efficiently accomplish tasks
-							</p>
-            </div>
-          </div>
-        </li>
-
-    </ul>
-
+        </a>
+        <div id="fb" class="timeline-body collapse">
+          <p>
+            • Created scripts for automation of network switch testing with Tcl and Ixia hardware API<br>
+            • Developed driver for IC chip with C++ to improve Wedge100 switch function and reliability<br>
+            • Assisted with switch setup and procedure standards to maximize the team’s productivity
+          </p>
+        </div>
     </div>
+    </li>
+    <li class="timeline-inverted">
+      <div class="timeline-badge"><img src="img/ge.png" alt="GE" style="width:60px;height:60px;"></div>
+      <a href="#ge" data-toggle="collapse" style="color:white">
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h3 class="timeline-title">GE Aviation</h3>
+            <h4 class="timeline-title">Systems Engineer Intern</h4>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Summer 2015 </small></p>
+          </div>
+      </a>
+      <div id="ge" class="timeline-body collapse">
+        <p>
+          • Produced software tools to automate test validation for LEAP and Passport 20 engines<br>
+          • Supported certification documentation for pressure cycling tests and fire tests to meet FAA rules and regulations
+          <br>• Strengthened user interface for the GE Intern Onboarding app on Android OS
+        </p>
+      </div>
+  </div>
+  </li>
+  <li>
+    <div class="timeline-badge"><img src="img/mcd.png" alt="mcd" style="width:60px;height:60px;"></div>
+    <a href="#mcd" data-toggle="collapse" style="color:white">
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">McDonald's Corporation</h3>
+          <h4 class="timeline-title">Data Analyst Consultant</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Summer 2014 </small></p>
+        </div>
+    </a>
+    <div id="mcd" class="timeline-body collapse">
+      <p>
+        • Collaborated with team for testing and issue resolution of the e-Procurement website (the Marketplace)<br>
+        • Created a process to standardize the financial coding of 20,000 products sold on the Marketplace<br>
+        • Developed reporting to show purchasing trends on the new system in comparison to the old system
+      </p>
+    </div>
+    </div>
+  </li>
+  <li class="timeline-inverted">
+    <div class="timeline-badge"><img src="img/purdue.png" alt="mcd" style="width:60px;height:60px;"></div>
+    <a href="#pdu" data-toggle="collapse" style="color:white">
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h3 class="timeline-title">Wiley Dining Court</h3>
+          <h4 class="timeline-title">Student Associate</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Fall 2013 </small></p>
+        </div>
+    </a>
+    <div id="pdu" class="timeline-body collapse">
+      <p>
+        • Collaborated with colleagues to assign daily tasks, making sure no one had to work past his or her hours<br>
+        • Provided food and cleaning services to thousands of students<br>
+        • Worked in a team to efficiently accomplish tasks
+      </p>
+    </div>
+    </div>
+  </li>
+
+  </ul>
+
+  </div>
   <div class="col-md-2"></div>
   </div>
   <!-- end row //-->
 
-</div>
+  </div>
 
 
 
@@ -287,289 +302,290 @@
 
 
 
-<!-- PROJECTS -->
-<div id="projects" class="container-fluid bg-3">
+  <!-- PROJECTS -->
+  <div id="projects" class="container-fluid bg-3">
 
-	<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-  <h1 id="timeline">Projects</h1>
-  <p>Take a look at a few of my favorite projects I’ve started
-  or been a part of during the course of my career.</p>
-	<p><br></p>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h1 id="timeline">Projects</h1>
+        <p>Take a look at a few of my favorite projects I’ve started
+          or been a part of during the course of my career.</p>
+        <p><br></p>
 
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-      <li data-target="#myCarousel" data-slide-to="5"></li>
-      <li data-target="#myCarousel" data-slide-to="6"></li>
-    </ol>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
+          </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="img/rover.png" alt="New York" width="100" height="100">
-        <div style="text-align: center">
-        	<p> Spring & Fall 2014 </p>
-          <h3>Mars Rover</h3>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="img/rover.png" alt="New York" width="100" height="100">
+              <div style="text-align: center">
+                <p> Spring & Fall 2014 </p>
+                <h3>Mars Rover</h3>
+                <p>
+                  Modelling our design after the Curiosity Rover by NASA.
+                  It is designed to use at Purdue Space Day to promote STEM fields to younger students.
+                  I am responsible for designing and coding the drive system, sensors, and cameras.
+                </p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="img/useless.png" alt="Chicago" width="100" height="100">
+              <div style="text-align: center">
+                <p> Fall 2014 </p>
+                <h3>Useless Box</h3>
+                <p>
+                  It's a box that has four arms which turn switches off after a user has turned them on.
+                  There are four special modes that can be enabled with various combinations.
+                  This project utilized a microcontroller, four servos, four switches, and a little bit of love.
+                </p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="img/pi.png" alt="Los Angeles" width="100" height="100">
+              <div style="text-align: center">
+                <p> BoilerMake Fall '15 </p>
+                <h3>RaspberryPi PhotoBooth</h3>
+                <p>
+                  Wrote a Python script which runs upon the RaspPi being powered on.
+                  Mounted a button to take 3 pictures in a photobooth style.
+                  With internet connection, it automatically posts to twitter account.
+                  Created a cardboard box enclosure for safe travel and durability.
+                </p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="img/em.jpg" alt="Los Angeles" width="100" height="100">
+              <div style="text-align: center">
+                <p> Spring 2015</p>
+                <h4> E&M Compatibility</h4>
+                <p>
+                  Understanding United State's FCC regulations on radiated and conducted emissions for electronic devices.
+                  Building and testing a PWM audio amplifier for radiated and conducted emissions.
+                  Testing at DLS Electronic Systems.
+                </p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="img/arduino.png" alt="Los Angeles" width="100" height="100">
+              <div style="text-align: center">
+                <p> December 2014 </p>
+                <h3>Arduino ThermoStat</h3>
+                <p>
+                  Designed password-protected thermometer with LCD display.
+                  Utilized BJT and converted reading to degrees Celcius.
+                  LEDs for system mode and buzzer for button presses from keypad.
+                  Used tri-color LED for some light show fun.
+                </p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="img/sustain.png" alt="Los Angeles" width="100" height="100">
+              <div style="text-align: center">
+                <p> Fall 2013 </p>
+                <h3>Sustainable System Design</h3>
+                <p>
+                  Designing sustainable systems for Purdue's residence halls and dining courts.
+                  Our solution to save energy deficiencies in residence halls utilized window films to reduce
+                  the impact of the environment on room temperature and energy use.
+                </p>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="img/mars.png" alt="Los Angeles" width="100" height="100">
+              <div style="text-align: center">
+                <p> Spring 2013 </p>
+                <h3>Mars Chemistry</h3>
+                <p>
+                  Performed chemistry experiments to understand the chemical processes of NASA's curiosity rover.
+                  Analyzed chemical compositions through a scanning electron microscope.
+                  Presented research to staff and families.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+  </div>
+
+
+  <!-- LEADER -->
+  <div id="leader" class="container-fluid bg-2">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+        <h1 id="timeline">Leadership</h1>
+        <p>See how I get involved in my community, lead teams, and help my peers.</p>
+        <p><br></p>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+
+      <div class="col-md-4">
+        <div class="col-md-4">
+          <img src="img/stem-logo.png" alt="Purdue" style="width:80px;height:80px;">
+        </div>
+        <div class="col-md-8" style="text-align: left">
+          <p>Summer 2018 - Present</p>
+          <h4>Boeing Long Beach E-Week</h4>
+          <h4>STEM Outreach Focal</h4>
+        </div>
+        <div class="col-md-12" style="text-align: left">
           <p>
-          Modelling our design after the Curiosity Rover by NASA.
-				It is designed to use at Purdue Space Day to promote STEM fields to younger students.
-				I am responsible for designing and coding the drive system, sensors, and cameras.
+            I inspire 6th - 12th grade students to pursue STEM careers through interactive projects.
+            I plan, lead, and coordinate efforts to help local Long Beach schools.
           </p>
         </div>
       </div>
 
-      <div class="item">
-        <img src="img/useless.png" alt="Chicago" width="100" height="100">
-        <div style="text-align: center">
-        	<p> Fall 2014 </p>
-          <h3>Useless Box</h3>
-          <p>
-				It's a box that has four arms which turn switches off after a user has turned them on.
-				There are four special modes that can be enabled with various combinations.
-				This project utilized a microcontroller, four servos, four switches, and a little bit of love.
-			</p>
+      <div class="col-md-4">
+        <div class="col-md-4">
+          <img src="img/ecess.png" alt="Purdue" style="width:80px;height:80px;">
         </div>
-      </div>
-
-      <div class="item">
-        <img src="img/pi.png" alt="Los Angeles" width="100" height="100">
-        <div style="text-align: center">
-        	<p> BoilerMake Fall '15 </p>
-          <h3>RaspberryPi PhotoBooth</h3>
-          <p>
-				Wrote a Python script which runs upon the RaspPi being powered on.
-				Mounted a button to take 3 pictures in a photobooth style.
-				With internet connection, it automatically posts to twitter account.
-				Created a cardboard box enclosure for safe travel and durability.
-			</p>
+        <div class="col-md-8" style="text-align: left">
+          <p>Jan 2015 - Dec 2016</p>
+          <h4>ECE Student Society</h4>
+          <h4>Publicity Chair, Faculty Chair</h4>
         </div>
-      </div>
-
-      <div class="item">
-        <img src="img/em.jpg" alt="Los Angeles" width="100" height="100">
-        <div style="text-align: center">
-        	<p>  Spring 2015</p>
-					<h4>  E&M Compatibility</h4>
-					<p>
-						Understanding United State's FCC regulations on radiated and conducted emissions for electronic devices.
-						Building and testing a PWM audio amplifier for radiated and conducted emissions.
-						Testing at DLS Electronic Systems.
-					</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="img/arduino.png" alt="Los Angeles" width="100" height="100">
-        <div style="text-align: center">
-        	<p> December 2014 </p>
-          <h3>Arduino ThermoStat</h3>
+        <div class="col-md-12" style="text-align: left">
           <p>
-						Designed password-protected thermometer with LCD display.
-						Utilized BJT and converted reading to degrees Celcius.
-						LEDs for system mode and buzzer for button presses from keypad.
-						Used tri-color LED for some light show fun.
-					</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="img/sustain.png" alt="Los Angeles" width="100" height="100">
-        <div style="text-align: center">
-        	<p> Fall 2013 </p>
-          <h3>Sustainable System Design</h3>
-          <p>
-				Designing sustainable systems for Purdue's residence halls and dining courts.
-				Our solution to save energy deficiencies in residence halls utilized window films to reduce
-				the impact of the environment on room temperature and energy use.
-					</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="img/mars.png" alt="Los Angeles" width="100" height="100">
-        <div style="text-align: center">
-        	<p> Spring 2013 </p>
-          <h3>Mars Chemistry</h3>
-          <p>
-				Performed chemistry experiments to understand the chemical processes of NASA's curiosity rover.
-				Analyzed chemical compositions through a scanning electron microscope.
-				Presented research to staff and families.
-					</p>
+            I help plan events to develop strong faculty to student relations in the ECE community.
+            To reach ECE students events are publicized to meet Purdue University regulations.
+            I ensure success in events such as the SPARK Challenge, Welcome Week, and Dead Week Snacks.
+          </p>
         </div>
       </div>
 
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-	</div>
-
-	</div>
-  <div class="col-md-2"></div>
-  </div>
-
-</div>
-
-
-<!-- LEADER -->
-<div id="leader" class="container-fluid bg-2">
-  <div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-
-  <h1 id="timeline">Leadership</h1>
-  <p>See how I get involved in my community, lead teams, and help my peers.</p>
-  <p><br></p>
-  </div>
-  <div class="col-md-2"></div>
-  </div>
-  <div class="row">
-  	<div class="col-md-2"></div>
-
-    <div class="col-md-4">
-			<div class="col-md-4">
-				<img src="img/stem-logo.png" alt="Purdue" style="width:80px;height:80px;">
-			</div>
-			<div class="col-md-8" style="text-align: left">
-				<p>Summer 2018 - Present</p>
-				<h4>Boeing Long Beach E-Week</h4>
-				<h4>STEM Outreach Focal</h4>
-			</div>
-			<div class="col-md-12" style="text-align: left">
-			<p>
-				I inspire 6th - 12th grade students to pursue STEM careers through interactive projects.
-        I plan, lead, and coordinate efforts to help local Long Beach schools.
-			</p>
-			</div>
-  	</div>
-
-    <div class="col-md-4">
-			<div class="col-md-4">
-				<img src="img/ecess.png" alt="Purdue" style="width:80px;height:80px;">
-			</div>
-			<div class="col-md-8" style="text-align: left">
-				<p>Jan 2015 - Dec 2016</p>
-				<h4>ECE Student Society</h4>
-				<h4>Publicity Chair, Faculty Chair</h4>
-			</div>
-			<div class="col-md-12" style="text-align: left">
-			<p>
-				I help plan events to develop strong faculty to student relations in the ECE community.
-				To reach ECE students events are publicized to meet Purdue University regulations.
-				I ensure success in events such as the SPARK Challenge, Welcome Week, and Dead Week Snacks.
-			</p>
-			</div>
-  	</div>
-
-  </div>
-<div class="row">
-    <div class="col-md-2"></div>
-  	<div class="col-md-4">
-			<div class="col-md-4">
-				<img src="img/eagle.png" alt="UC3M" style="width:80px;height:80px;">
-			</div>
-			<div class="col-md-8" style="text-align: left">
-				<p>2012</p>
-				<h4>Boy Scouts of America</h4>
-				<h4>Eagle Scout</h4>
-			</div>
-			<div class="col-md-12" style="text-align: left">
-			<p>
-				I mentored and lead a troop of 50 scouts through 3-14 day camping trips.
-				I taught essential outdoor skills from suriving in an igloo to hiking mountains
-				with only a map and compass.
-				My project consisted of working with Sgt. Tommy's Kids Foundation to teach outdoor
-				skills to children of service families.
-			</p>
-			</div>
-  	</div>
-  	<div class="col-md-2"></div>
-  </div>
-
-</div>
-
-<!-- RESUME -->
-<div id="resume" class="container-fluid bg-3 text-center">
-  <h1 id="timeline">Download Resume</h1>
-  <p>Take a look at my resume.</p>
-  <p><br></p>
-  <a href="resume.pdf" class="btn btn-default btn-lg" download="">
-  	DOWNLOAD
-  </a>
-  <a href="resume.pdf" class="btn btn-default btn-lg">
-  	VIEW
-  </a>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="container-fluid bg-2 text-center">
-  <h1 id="timeline">Talk to me.</h1>
-  <p><br></p>
-
-  <div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-
-  <div class="col-sm-5" style="text-align:left">
-  	<h4><u>Contact Info</u></h4>
-  	<p>
-  		<i class="fa fa-map-marker"></i>
-  		 Tom Stepp
-  		<br>
-  		Long Beach, CA 90803
-		</p>
-		<p>
-  		<i class="fa fa-phone"></i>
-  		 (630)842-1284
-  		<br>
-  		<i class="fa fa-envelope-o"></i>
-  		 thomas.j.stepp@gmail.com
-  		<br>
-		</p>
-  </div>
-
-  <div class="col-sm-7">
-  	<h4>Get in Touch</h4>
-
-  	<form>
-  	<div class='row'>
-          <div class='col-xs-12 col-sm-6'>
-            <input type='text' label='Name' class='form-control contact-input' name='first' placeholder='First Name *'>
-          </div>
-          <div class='col-xs-12 col-sm-6'>
-            <input type='text' label='Name' class='form-control contact-input' name='last' placeholder='Last Name *'>
-          </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <div class="col-md-4">
+          <img src="img/eagle.png" alt="UC3M" style="width:80px;height:80px;">
         </div>
-        <input type='text' class='form-control contact-input' name='subject' placeholder='Subject *'>
-        <textarea class='form-control contact-input message' name='message' placeholder='Your Message *'></textarea>
-        <input class='btn btn-default contact-submit' type='submit' value='Submit'>
-  	</form>
-  </div>
+        <div class="col-md-8" style="text-align: left">
+          <p>2012</p>
+          <h4>Boy Scouts of America</h4>
+          <h4>Eagle Scout</h4>
+        </div>
+        <div class="col-md-12" style="text-align: left">
+          <p>
+            I mentored and lead a troop of 50 scouts through 3-14 day camping trips.
+            I taught essential outdoor skills from suriving in an igloo to hiking mountains
+            with only a map and compass.
+            My project consisted of working with Sgt. Tommy's Kids Foundation to teach outdoor
+            skills to children of service families.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
 
   </div>
-	<div class="col-md-3"></div>
-	</div>
 
-</div>
+  <!-- RESUME -->
+  <div id="resume" class="container-fluid bg-3 text-center">
+    <h1 id="timeline">Download Resume</h1>
+    <p>Take a look at my resume.</p>
+    <p><br></p>
+    <a href="resume.pdf" class="btn btn-default btn-lg" download="">
+      DOWNLOAD
+    </a>
+    <a href="resume.pdf" class="btn btn-default btn-lg">
+      VIEW
+    </a>
+  </div>
 
-<!-- FOOTER -->
-<footer class="container bg-7 text-center" style="width:100%">
-  <p>Made with <i class='fa fa-heart'></i> by Tom Stepp.</p>
-</footer>
+  <!-- CONTACT -->
+  <div id="contact" class="container-fluid bg-2 text-center">
+    <h1 id="timeline">Talk to me.</h1>
+    <p><br></p>
+
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+
+        <div class="col-sm-5" style="text-align:left">
+          <h4><u>Contact Info</u></h4>
+          <p>
+            <i class="fa fa-map-marker"></i>
+            Tom Stepp
+            <br>
+            Long Beach, CA 90803
+          </p>
+          <p>
+            <i class="fa fa-phone"></i>
+            (630)842-1284
+            <br>
+            <i class="fa fa-envelope-o"></i>
+            thomas.j.stepp@gmail.com
+            <br>
+          </p>
+        </div>
+
+        <div class="col-sm-7">
+          <h4>Get in Touch</h4>
+
+          <form>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-6'>
+                <input type='text' label='Name' class='form-control contact-input' name='first' placeholder='First Name *'>
+              </div>
+              <div class='col-xs-12 col-sm-6'>
+                <input type='text' label='Name' class='form-control contact-input' name='last' placeholder='Last Name *'>
+              </div>
+            </div>
+            <input type='text' class='form-control contact-input' name='subject' placeholder='Subject *'>
+            <textarea class='form-control contact-input message' name='message' placeholder='Your Message *'></textarea>
+            <input class='btn btn-default contact-submit' type='submit' value='Submit'>
+          </form>
+        </div>
+
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="container bg-7 text-center" style="width:100%">
+    <p>Made with <i class='fa fa-heart'></i> by Tom Stepp.</p>
+  </footer>
 
 </body>
+
 </html>
