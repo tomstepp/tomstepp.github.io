@@ -1,2 +1,2 @@
-# tomstepp.github.io
+# thomas-stepp.com
 My personal site.
