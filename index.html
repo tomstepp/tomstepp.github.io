@@ -18,7 +18,7 @@
          <a href="ThomasJohnStepp_Resume.pdf" target="TJS_Resume">
          <img src="img/menu.png">
          </a>
-         <button onclick="window.open('ThomasJohnStepp_Resume.pdf','TJS_Resume')">Sign In</button>
+         <button onclick="openResume()">Sign In</button>
       </nav>
       <!-- Main Content -->
       <section class="section-1">
@@ -38,14 +38,14 @@
             <span class="google-letter" style='color: #34a853'>p</span>
          </p>
          <!-- Search Form -->
-         <form action="ThomasJohnStepp_Resume.pdf" target="TJS_Resume" method="post">
+         <form
             <br><br>
             <div class="s-box">
-               <img src="img/search.svg" class="search-icon">
+               <img onclick="openResume()" src="img/search.svg" class="search-icon">
                <input onclick="stopTypewriter()" id="textbox" type="text" class="s-input">
-               <img src="img/mic.png" class="vs-icon">
-               <input type="submit" class="s-btn" value="Google Search">
-               <input type="submit" class="s-btn" value="I'm Feeling Lucky">
+               <img onclick="openResume()" src="img/mic.png" class="vs-icon">
+               <input onclick="openResume()" type="submit" class="s-btn" value="Google Search">
+               <input onclick="openResume()" type="submit" class="s-btn" value="I'm Feeling Lucky">
             </div>
          </form>
          <!-- Note below search -->

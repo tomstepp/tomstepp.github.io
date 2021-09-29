@@ -67,3 +67,7 @@ async function startTypewriter(){
   document.getElementById("textbox").style.color = "black";
   carousel(carouselText, "#textbox")
 }
+
+async function openResume(){
+  window.open('ThomasJohnStepp_Resume.pdf', 'TJS_Resume');
+}

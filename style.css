@@ -124,12 +124,14 @@ nav button {
 	position: absolute;
 	top: 13px;
 	left: 14px;
+	cursor: pointer;
 }
 .s-box .vs-icon {
 	width: 14px;
 	position: absolute;
 	top: 13px;
 	right: 24px;
+	cursor: pointer;
 }
 .s-btn {
 	border: 1px solid transparent;
