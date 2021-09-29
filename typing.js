@@ -1,5 +1,5 @@
 const carouselText = [
-  {text: "I'm a software engineer at Google Cloud", color: "black"},
+  {text: "I'm a software engineer on the Google Cloud team", color: "black"},
   {text: "I work on large-scale, distributed software systems", color: "black"}
 ]
 
