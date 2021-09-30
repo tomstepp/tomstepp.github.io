@@ -1,5 +1,5 @@
 const carouselText = [
-  {text: "I'm a software engineer on the Google Cloud team", color: "black"},
+  {text: "I'm a software engineer on the Google Cloud Dataflow team", color: "black"},
   {text: "I work on large-scale, distributed software systems", color: "black"}
 ]
 
@@ -9,7 +9,7 @@ $(document).ready(async function() {
   carousel(carouselText, "#textbox")
 });
 
-async function typeSentence(sentence, eleRef, delay = 70) {
+async function typeSentence(sentence, eleRef, delay = 60) {
   const letters = sentence.split("");
   let i = 0;
   while(i < letters.length && !theFormWasClicked) {
@@ -20,7 +20,7 @@ async function typeSentence(sentence, eleRef, delay = 70) {
   return;
 }
 
-async function deleteSentence(eleRef, delay = 40) {
+async function deleteSentence(eleRef, delay = 30) {
   let val = document.getElementById("textbox").value;
   let valsize = val.length;
   while(valsize > 0 && !theFormWasClicked) {
