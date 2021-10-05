@@ -13,9 +13,7 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 }
-.google-word {
-  xxxfont-family: 'Roboto', sans-serif;
-	xxxfrom: 'https://transfonter.org/';
+@font-face {
 	font-family: 'Roboto';
 	src: url('font/Roboto-Medium.eot');
 	src: url('font/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
@@ -23,18 +21,22 @@ body {
 			url('font/Roboto-Medium.woff') format('woff'),
 			url('font/Roboto-Medium.ttf') format('truetype'),
 			url('font/Roboto-Medium.svg#Roboto-Medium') format('svg');
+
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
+}
 
-  font-size: 0;
+.google-word {
+	font-size: 0;
 	text-align: center;
 	display: table;
   margin: 0 auto;
 }
 
 .google-letter {
-  font-size: 6rem;
+	font-family: 'Roboto', sans-serif;
+  font-size: 5rem;
   margin: 0px;
   border: 0px;
   padding: 0px;
@@ -192,4 +194,17 @@ footer a:hover {
 }
 .link-2 {
 	padding-right: 18.7px;
+}
+
+.google-blue{
+	color: #4285f4
+}
+.google-red{
+	color: #ea4335
+}
+.google-yellow{
+	color: #fbbc05
+}
+.google-green{
+	color: #34a853
 }
