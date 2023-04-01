@@ -69,5 +69,5 @@ async function startTypewriter(){
 }
 
 async function openResume(){
-  window.open('ThomasStepp_Resume.pdf', 'TJS_Resume');
+  window.open('TomStepp_Resume.pdf', 'TJS_Resume');
 }
