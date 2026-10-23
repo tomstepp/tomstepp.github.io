@@ -39,9 +39,9 @@
          (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
    </script>
    <!-- CSS -->
-   <link rel="stylesheet" href="style.css?v=20261024">
+   <link rel="stylesheet" href="style.css?v=20261025">
    <!-- Javascript -->
-   <script src="typing.js?v=20261024" defer></script>
+   <script src="typing.js?v=20261025" defer></script>
 </head>
 
 <body>
@@ -73,13 +73,13 @@
          <span class="google-letter google-red" aria-hidden="true">p</span>
       </h1>
       <!-- Search Form -->
-      <form onsubmit="openResume(); return false;">
+      <form action="search.html" method="get" role="search">
          <div class="s-box">
             <button type="submit" class="icon-btn search-icon" aria-label="Search"><img src="img/search.svg" alt="" width="20" height="20"></button>
-            <textarea id="textbox" class="s-input" rows="1" aria-label="Search"></textarea>
+            <textarea id="textbox" name="q" class="s-input" rows="1" aria-label="Search"></textarea>
             <button type="submit" class="icon-btn mic-icon" aria-label="Search by voice"><img src="img/mic.png" alt="" width="18"></button>
             <input type="submit" class="s-btn" value="Google Search">
-            <input type="submit" class="s-btn" value="I'm Feeling Lucky">
+            <input type="button" class="s-btn" value="I'm Feeling Lucky" onclick="openResume()">
          </div>
       </form>
       <!-- Note below search -->

@@ -314,3 +314,350 @@ footer a:hover {
 [data-theme="dark"] .not-found {
 	color: #bdc1c6;
 }
+
+/* ---------- Fake search results page (search.html) ---------- */
+/* Hidden on screen but still read by screen readers. */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+:root {
+	--snippet: #4d5156;
+	--chip-bg: #f1f3f4;
+	--sr-indent: 180px;
+}
+:root[data-theme="dark"] {
+	--snippet: #bdc1c6;
+	--chip-bg: #303134;
+}
+.sr-header {
+	display: flex;
+	align-items: center;
+	gap: 28px;
+	padding: 20px 24px 0 32px;
+}
+.sr-logo {
+	flex-shrink: 0;
+	width: calc(var(--sr-indent) - 60px);
+	margin: 0;
+}
+.sr-logo .google-letter {
+	font-size: 26px;
+}
+.sr-form {
+	flex: 1;
+	max-width: 690px;
+}
+.sr-box {
+	position: relative;
+}
+.sr-input {
+	width: 100%;
+	border: 1px solid var(--input-border);
+	border-radius: 24px;
+	background: var(--bg);
+	color: var(--text);
+	font-size: 16px;
+	padding: 11px 48px 11px 20px;
+	outline: none;
+}
+.sr-input:hover,
+.sr-input:focus {
+	border-color: transparent;
+	box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+[data-theme="dark"] .sr-input:hover,
+[data-theme="dark"] .sr-input:focus {
+	background: #303134;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.28);
+}
+.sr-search-btn {
+	position: absolute;
+	right: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	border: none;
+	background: none;
+	padding: 0;
+	line-height: 0;
+	cursor: pointer;
+	opacity: .6;
+}
+[data-theme="dark"] .sr-search-btn img {
+	filter: invert(1);
+}
+.sr-header .theme-btn {
+	margin-left: auto;
+}
+/* .sr-tabs is a <nav>, so undo the home page nav styles. */
+.sr-tabs {
+	display: flex;
+	justify-content: flex-start;
+	margin: 0;
+	gap: 22px;
+	padding: 14px 0 0 var(--sr-indent);
+	border-bottom: 1px solid var(--footer-border);
+	font-size: 14px;
+	overflow-x: auto;
+}
+.sr-tabs .sr-tab {
+	color: var(--text-muted);
+	font-size: 14px;
+	line-height: 20px;
+	padding: 0 2px 10px;
+	white-space: nowrap;
+}
+.sr-tabs a.sr-tab:hover {
+	text-decoration: none;
+	opacity: 1;
+}
+.sr-tabs .sr-tab:hover {
+	color: var(--text);
+}
+.sr-tabs .sr-tab-active {
+	color: var(--link);
+	border-bottom: 3px solid var(--link);
+	font-weight: bold;
+}
+.sr-main {
+	flex: 1;
+	display: flex;
+	align-items: flex-start;
+	gap: 72px;
+	padding: 0 24px 48px var(--sr-indent);
+	color: var(--text);
+}
+.sr-results {
+	flex: 0 1 652px;
+	min-width: 0;
+}
+.sr-stats {
+	font-size: 14px;
+	color: var(--text-muted);
+	padding: 14px 0 18px;
+}
+.sr-dym {
+	font-size: 18px;
+	line-height: 26px;
+	color: #d93025;
+	margin-bottom: 26px;
+}
+[data-theme="dark"] .sr-dym {
+	color: #f28b82;
+}
+.sr-dym a {
+	color: var(--link);
+}
+.sr-dym-small {
+	font-size: 14px;
+	color: var(--text-muted);
+}
+.sr-none {
+	padding-top: 24px;
+	font-size: 16px;
+	line-height: 26px;
+}
+.sr-none p {
+	margin-bottom: 14px;
+}
+.sr-none ul {
+	margin-left: 40px;
+}
+.sr-none a {
+	color: var(--link);
+}
+.sr-result {
+	margin-bottom: 30px;
+}
+.sr-site {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 4px;
+}
+.sr-fav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: var(--chip-bg);
+	font-weight: bold;
+	font-size: 14px;
+}
+.sr-url {
+	font-size: 12px;
+	color: var(--text-muted);
+}
+.sr-title {
+	font-size: 20px;
+	line-height: 26px;
+	font-weight: 400;
+	margin-bottom: 4px;
+}
+.sr-title a {
+	color: var(--link);
+}
+.sr-title a:hover,
+.sr-panel-links a:hover,
+.sr-dym a:hover,
+.sr-none a:hover {
+	text-decoration: underline;
+}
+.sr-snippet {
+	font-size: 14px;
+	line-height: 22px;
+	color: var(--snippet);
+}
+.sr-paa {
+	margin-bottom: 30px;
+}
+.sr-paa h2 {
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+.sr-paa details {
+	border-bottom: 1px solid var(--footer-border);
+}
+.sr-paa summary {
+	position: relative;
+	padding: 14px 32px 14px 0;
+	font-size: 16px;
+	cursor: pointer;
+	list-style: none;
+}
+.sr-paa summary::-webkit-details-marker {
+	display: none;
+}
+.sr-paa summary::after {
+	content: "";
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	width: 8px;
+	height: 8px;
+	border-right: 2px solid var(--text-muted);
+	border-bottom: 2px solid var(--text-muted);
+	transform: translateY(-75%) rotate(45deg);
+	transition: transform 150ms;
+}
+.sr-paa details[open] summary::after {
+	transform: translateY(-25%) rotate(225deg);
+}
+.sr-paa details p {
+	padding: 0 0 16px;
+	font-size: 14px;
+	line-height: 22px;
+	color: var(--snippet);
+}
+.sr-panel {
+	flex: 0 0 360px;
+	margin-top: 20px;
+	border: 1px solid var(--footer-border);
+	border-radius: 8px;
+	padding: 20px;
+}
+.sr-panel-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 14px;
+}
+.sr-panel-name {
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 36px;
+}
+.sr-panel-sub {
+	font-size: 14px;
+	color: var(--text-muted);
+}
+.sr-panel-photo {
+	width: 88px;
+	height: 88px;
+	border-radius: 8px;
+	object-fit: cover;
+}
+.sr-panel-bio {
+	font-size: 14px;
+	line-height: 22px;
+	color: var(--snippet);
+	padding-bottom: 14px;
+	border-bottom: 1px solid var(--footer-border);
+}
+.sr-panel-facts {
+	padding: 10px 0 14px;
+	font-size: 14px;
+	line-height: 26px;
+}
+.sr-panel-facts dt {
+	display: inline;
+	font-weight: bold;
+}
+.sr-panel-facts dt::after {
+	content: ": ";
+}
+.sr-panel-facts dd {
+	display: inline;
+	color: var(--snippet);
+}
+.sr-panel-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.sr-chip {
+	padding: 7px 14px;
+	border-radius: 18px;
+	background: var(--chip-bg);
+	color: var(--text);
+	font-size: 14px;
+}
+
+/* Phones and narrow windows: stack the header and show the panel above the results. */
+@media (max-width: 960px) {
+	:root {
+		--sr-indent: 16px;
+	}
+	.sr-header {
+		flex-wrap: wrap;
+		gap: 12px;
+		padding: 16px 16px 0;
+	}
+	.sr-logo {
+		width: auto;
+	}
+	.sr-form {
+		order: 3;
+		flex-basis: 100%;
+		max-width: none;
+	}
+	.sr-tabs {
+		padding-right: 16px;
+	}
+	.sr-main {
+		flex-direction: column;
+		gap: 0;
+		padding-right: 16px;
+	}
+	.sr-results {
+		flex: none;
+		width: 100%;
+	}
+	.sr-panel {
+		order: -1;
+		flex: none;
+		width: 100%;
+		margin-bottom: 4px;
+	}
+}

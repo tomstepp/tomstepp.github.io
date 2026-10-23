@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- A joke results page for searches from the home page; keep it out of real search results. -->
+   <meta name="robots" content="noindex">
+   <title>Tom Stepp – Search</title>
+   <link rel="icon" href="img/icon.png">
+   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+   <script>
+      // Apply the saved or system theme before the page paints, so it doesn't flash.
+      try { var storedTheme = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = storedTheme ||
+         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+   </script>
+   <link rel="stylesheet" href="style.css?v=20261025">
+   <script src="typing.js?v=20261025" defer></script>
+   <script src="search.js?v=20261025" defer></script>
+</head>
+
+<body>
+   <header class="sr-header">
+      <a href="./" class="sr-logo google-word" aria-label="Tom Stepp home">
+         <span class="google-letter google-blue" aria-hidden="true">T</span>
+         <span class="google-letter google-red" aria-hidden="true">o</span>
+         <span class="google-letter google-yellow" aria-hidden="true">m</span>
+         <span class="google-letter" aria-hidden="true">&nbsp;</span>
+         <span class="google-letter google-blue" aria-hidden="true">S</span>
+         <span class="google-letter google-green" aria-hidden="true">t</span>
+         <span class="google-letter google-red" aria-hidden="true">e</span>
+         <span class="google-letter google-blue" aria-hidden="true">p</span>
+         <span class="google-letter google-red" aria-hidden="true">p</span>
+      </a>
+      <form action="search.html" method="get" class="sr-form" role="search">
+         <div class="sr-box">
+            <input id="sr-q" name="q" type="text" class="sr-input" aria-label="Search" autocomplete="off">
+            <button type="submit" class="sr-search-btn" aria-label="Search"><img src="img/search.svg" alt="" width="20" height="20"></button>
+         </div>
+      </form>
+      <button type="button" class="theme-btn" onclick="toggleTheme()" aria-label="Dark mode" aria-pressed="false" title="Toggle dark mode">
+         <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-9.8-3.14c0-1.81.89-3.42 2.26-4.4A9.6 9.6 0 0 0 12 3z"/></svg>
+         <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M11 1h2v3h-2zM11 20h2v3h-2zM1 11h3v2H1zM20 11h3v2h-3zM4.2 5.6l1.4-1.4 2.1 2.1-1.4 1.4zM16.3 17.7l1.4-1.4 2.1 2.1-1.4 1.4zM4.2 18.4l2.1-2.1 1.4 1.4-2.1 2.1zM16.3 6.3l2.1-2.1 1.4 1.4-2.1 2.1z"/></svg>
+      </button>
+   </header>
+
+   <nav class="sr-tabs" aria-label="Result types">
+      <span class="sr-tab sr-tab-active">All</span>
+      <a class="sr-tab resume-link" href="TomStepp_Resume.pdf">Resume</a>
+      <a class="sr-tab" href="https://patents.google.com/?q=(US12545382B2)+OR+(US12049296B2)+OR+(US11200749B2)" target="_blank" rel="noopener">Patents</a>
+   </nav>
+
+   <main class="sr-main">
+      <h1 class="visually-hidden">Search results</h1>
+      <div class="sr-results">
+         <p class="sr-stats" id="sr-stats">About 1 Tom Stepp (0.00 seconds)</p>
+
+         <!-- Shown when the query isn't about Tom: Google's "Showing results for" banner. -->
+         <p class="sr-dym" id="sr-dym" hidden>
+            Showing results for <a href="search.html?q=Tom+Stepp"><b><i>Tom Stepp</i></b></a><br>
+            <span class="sr-dym-small">Search instead for <a id="sr-instead" href="#"></a></span>
+         </p>
+
+         <!-- Shown after "Search instead for": Google's no-results page. -->
+         <div class="sr-none" id="sr-none" hidden>
+            <p>Your search - <b id="sr-none-q"></b> - did not match any documents.</p>
+            <p>Did you mean: <a href="search.html?q=Tom+Stepp"><b><i>Tom Stepp</i></b></a></p>
+            <p>Suggestions:</p>
+            <ul>
+               <li>Make sure all words are spelled <i>Tom Stepp</i>.</li>
+               <li>Try different keywords, like <i>Tom Stepp</i>.</li>
+               <li>Try fewer keywords. Two is plenty.</li>
+            </ul>
+         </div>
+
+         <div id="sr-list">
+            <div class="sr-result">
+               <div class="sr-site">
+                  <span class="sr-fav google-blue" aria-hidden="true">T</span>
+                  <span><span class="sr-site-name">tomstepp.com</span><br><span class="sr-url">https://tomstepp.com › resume</span></span>
+               </div>
+               <h3 class="sr-title"><a class="resume-link" href="TomStepp_Resume.pdf">Tom Stepp – Resume</a></h3>
+               <p class="sr-snippet">Senior software engineer at Google working on <b>Google Cloud Dataflow</b> Streaming. Previously at Boeing.</p>
+            </div>
+
+            <div class="sr-result">
+               <div class="sr-site">
+                  <span class="sr-fav google-red" aria-hidden="true">P</span>
+                  <span><span class="sr-site-name">Google Patents</span><br><span class="sr-url">https://patents.google.com › search</span></span>
+               </div>
+               <h3 class="sr-title"><a href="https://patents.google.com/?q=(US12545382B2)+OR+(US12049296B2)+OR+(US11200749B2)" target="_blank" rel="noopener">Tom Stepp – Patents</a></h3>
+               <p class="sr-snippet">Three granted U.S. patents from Boeing.</p>
+            </div>
+
+            <div class="sr-result">
+               <div class="sr-site">
+                  <span class="sr-fav" aria-hidden="true">G</span>
+                  <span><span class="sr-site-name">GitHub</span><br><span class="sr-url">https://github.com › tomstepp</span></span>
+               </div>
+               <h3 class="sr-title"><a href="https://github.com/tomstepp" target="_blank" rel="noopener">Tom Stepp – GitHub</a></h3>
+               <p class="sr-snippet">Source for this website, including the very search results page you're reading right now.</p>
+            </div>
+
+            <section class="sr-paa" aria-labelledby="sr-paa-heading">
+               <h2 id="sr-paa-heading">People also ask</h2>
+               <details>
+                  <summary>What does Tom Stepp work on?</summary>
+                  <p>He works on Google Cloud Dataflow Streaming.</p>
+               </details>
+               <details>
+                  <summary>Where did Tom Stepp go to school?</summary>
+                  <p>MS in Computer Science from USC, and BS in Electrical Engineering from Purdue.</p>
+               </details>
+            </section>
+         </div>
+      </div>
+
+      <aside class="sr-panel" aria-label="About Tom Stepp">
+         <div class="sr-panel-head">
+            <div>
+               <h2 class="sr-panel-name">Tom Stepp</h2>
+               <p class="sr-panel-sub">Senior Software Engineer</p>
+            </div>
+            <img class="sr-panel-photo" src="img/apple-touch-icon.png" alt="Tom Stepp" width="88" height="88">
+         </div>
+         <p class="sr-panel-bio">Tom Stepp is a senior software engineer at Google in Seattle, working on Google Cloud Dataflow Streaming.</p>
+         <dl class="sr-panel-facts">
+            <div><dt>Employer</dt><dd>Google (2021–present)</dd></div>
+            <div><dt>Education</dt><dd>USC, Purdue</dd></div>
+         </dl>
+         <div class="sr-panel-links">
+            <a class="sr-chip resume-link" href="TomStepp_Resume.pdf">Resume</a>
+            <a class="sr-chip" href="https://github.com/tomstepp" target="_blank" rel="noopener">GitHub</a>
+         </div>
+      </aside>
+   </main>
+
+   <footer>
+      <div class="links">
+         <div class="link-1">
+            <a href="TomStepp_Resume.pdf" class="resume-link">About</a>
+         </div>
+         <div class="link-2">
+            <a href="TomStepp_Resume.pdf" class="resume-link">Privacy</a>
+            <a href="TomStepp_Resume.pdf" class="resume-link">Terms</a>
+         </div>
+      </div>
+   </footer>
+</body>
+
+</html>

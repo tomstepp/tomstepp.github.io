@@ -17,24 +17,28 @@ document.addEventListener("DOMContentLoaded", function () {
     link.target = RESUME_TAB;
   });
 
-  const box = textbox();
-  // The textbox is a textarea so long text wraps; keep Enter submitting like a search box.
-  box.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      openResume();
-    }
-  });
-  box.addEventListener("input", fitTextbox);
-  // Focus covers both clicking and tabbing into the box.
-  box.addEventListener("focus", stopTypewriter);
-  window.addEventListener("resize", fitTextbox);
-
   updateThemeButton();
   // Follow system theme changes unless the visitor picked a theme with the button.
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
     if (savedTheme() === null) setTheme(e.matches ? "dark" : "light");
   });
+
+  // The rest sets up the home page search box; other pages (like search.html) stop here.
+  const box = textbox();
+  if (!box) return;
+  // The textbox is a textarea so long text wraps; keep Enter submitting like a search box.
+  box.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      box.form.requestSubmit();
+    }
+  });
+  // Searching mid-animation searches for the default name, not half a typewriter sentence.
+  box.form.addEventListener("submit", stopTypewriter);
+  box.addEventListener("input", fitTextbox);
+  // Focus covers both clicking and tabbing into the box.
+  box.addEventListener("focus", stopTypewriter);
+  window.addEventListener("resize", fitTextbox);
 
   // Skip the animation for visitors who prefer reduced motion.
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -51,14 +55,14 @@ function textbox() {
 // Type and delete each sentence in turn until the visitor focuses the textbox.
 async function carousel(sentences) {
   for (let i = 0; !typewriterStopped; i = (i + 1) % sentences.length) {
-    await typeSentence(sentences[i]);
+    await typeSentence(sentences[i], 50);
     await waitForMs(1500);
-    await deleteSentence();
+    await deleteSentence(50);
     await waitForMs(500);
   }
 }
 
-async function typeSentence(sentence, delay = 60) {
+async function typeSentence(sentence, delay) {
   for (const letter of sentence) {
     await waitForMs(delay);
     if (typewriterStopped) return;
@@ -67,7 +71,7 @@ async function typeSentence(sentence, delay = 60) {
   }
 }
 
-async function deleteSentence(delay = 30) {
+async function deleteSentence(delay) {
   while (textbox().value.length > 0) {
     await waitForMs(delay);
     if (typewriterStopped) return;
@@ -100,7 +104,7 @@ function toggleTheme() {
   setTheme(next);
   try {
     localStorage.setItem("theme", next);
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function setTheme(theme) {
