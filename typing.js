@@ -1,6 +1,6 @@
 // Bump RESUME_VERSION whenever TomStepp_Resume.pdf changes so browsers fetch the new copy.
 const RESUME_VERSION = "20261022";
-const RESUME_ID = "TJS_Resume";
+const RESUME_ID = "TomStepp_Resume";
 const RESUME_URL = RESUME_ID + ".pdf?v=" + RESUME_VERSION;
 const RESUME_TAB = RESUME_ID + "_" + RESUME_VERSION;
 
