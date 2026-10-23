@@ -13,6 +13,14 @@ var theFormWasClicked = false;
 
 $(document).ready(async function () {
   $("a.resume-link").attr({ href: RESUME_URL, target: RESUME_TAB });
+  // The textbox is a textarea so long text wraps; keep Enter submitting like a search box.
+  $("#textbox").on("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      openResume();
+    }
+  }).on("input", fitTextbox);
+  $(window).on("resize", fitTextbox);
   carousel(carouselText, "#textbox")
 });
 
@@ -22,6 +30,7 @@ async function typeSentence(sentence, eleRef, delay = 60) {
   while (i < letters.length && !theFormWasClicked) {
     await waitForMs(delay);
     document.getElementById("textbox").value += letters[i];
+    fitTextbox();
     i++;
   }
   return;
@@ -33,6 +42,7 @@ async function deleteSentence(eleRef, delay = 30) {
   while (valsize > 0 && !theFormWasClicked) {
     await waitForMs(delay);
     document.getElementById("textbox").value = val.slice(0, -1);
+    fitTextbox();
     val = document.getElementById("textbox").value;
     valsize = val.length;
   }
@@ -58,6 +68,13 @@ function updateFontColor(eleRef, color) {
   $(eleRef).css('color', color);
 }
 
+// Grow or shrink the textbox to fit its text.
+function fitTextbox() {
+  const box = document.getElementById("textbox");
+  box.style.height = "auto";
+  box.style.height = (box.scrollHeight + box.offsetHeight - box.clientHeight) + "px";
+}
+
 function waitForMs(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -65,6 +82,7 @@ function waitForMs(ms) {
 async function stopTypewriter() {
   theFormWasClicked = true;
   document.getElementById("textbox").value = "";
+  fitTextbox();
   document.getElementById("textbox").style.color = "black";
 }
 
