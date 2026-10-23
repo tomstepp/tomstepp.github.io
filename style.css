@@ -1,12 +1,22 @@
 @font-face {
-
+	font-family: 'Roboto';
+	src: url('font/Roboto-Medium.woff2') format('woff2'),
+		url('font/Roboto-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
-*{
+
+* {
 	padding: 0;
-	margin:0;
+	margin: 0;
 	box-sizing: border-box;
 	text-decoration: none;
 	font-family: arial, sans-serif;
+}
+:root {
+	/* The page is designed light only; stop browsers from darkening form controls. */
+	color-scheme: light;
 }
 body {
 	display: flex;
@@ -14,37 +24,22 @@ body {
 	min-height: 100vh;
 	/* dvh excludes mobile browser toolbars, so the footer sits at the visible bottom. */
 	min-height: 100dvh;
-}
-@font-face {
-	font-family: 'Roboto';
-	src: url('font/Roboto-Medium.eot');
-	src: url('font/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
-			url('font/Roboto-Medium.woff2') format('woff2'),
-			url('font/Roboto-Medium.woff') format('woff'),
-			url('font/Roboto-Medium.ttf') format('truetype'),
-			url('font/Roboto-Medium.svg#Roboto-Medium') format('svg');
-
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
+	background: #fff;
 }
 
 .google-word {
 	font-size: 0;
+	font-weight: 500;
 	text-align: center;
 	display: table;
-  margin: 0 auto;
+	margin: 0 auto;
 }
-
 .google-letter {
 	font-family: 'Roboto', sans-serif;
-  font-size: clamp(3rem, 14vw, 5rem);
-  margin: 0px;
-  border: 0px;
-  padding: 0px;
+	font-size: clamp(3rem, 14vw, 5rem);
 	text-align: center;
-	margin: auto;
 }
+
 nav {
 	display: flex;
 	align-items: center;
@@ -57,9 +52,9 @@ nav a {
 	display: inline-block;
 	line-height: 24px;
 	font-weight: 400;
-	color: rgb(0,0,0, 0.87);
+	color: rgba(0, 0, 0, 0.87);
 	cursor: pointer;
-	padding: 5px 6.7px
+	padding: 5px 6.7px;
 }
 nav a:hover {
 	text-decoration: underline;
@@ -85,25 +80,20 @@ nav button {
 	margin-left: 7px;
 	cursor: pointer;
 }
+
 .section-1 {
 	flex: 1;
 }
-.section-1 .logo {
-	display: block;
-	margin: 0px auto;
-	margin-top: 107px;
-}
 .s-box {
 	width: min(580px, 100% - 32px);
-	margin: 0px auto;
+	margin: 29px auto 0;
 	position: relative;
-	margin-top: -8px;
 	text-align: center;
 }
 .s-box .s-input {
 	display: block;
 	border: 1px solid #ddd;
-	color: rgba(0,0,0, 0.87);
+	color: rgba(0, 0, 0, 0.87);
 	font-size: 16px;
 	padding: 13px;
 	line-height: 20px;
@@ -116,35 +106,42 @@ nav button {
 	resize: none;
 	overflow: hidden;
 }
-.s-box  .s-input:hover {
+.s-box .s-input:hover,
+.s-box .s-input:focus {
 	border: 1px solid #fff;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.05),
-				0 0 2px rgba(0, 0, 0, 0.05),
-				0 0 3px rgba(0, 0, 0, 0.05),
-				0 0 4px rgba(0, 0, 0, 0.05),
-				0 0 5px rgba(0, 0, 0, 0.05),
-				0 0 4px rgba(0, 0, 0, 0.05),
-				0 0 5px rgba(0, 0, 0, 0.05)
+		0 0 2px rgba(0, 0, 0, 0.05),
+		0 0 3px rgba(0, 0, 0, 0.05),
+		0 0 4px rgba(0, 0, 0, 0.05),
+		0 0 5px rgba(0, 0, 0, 0.05),
+		0 0 4px rgba(0, 0, 0, 0.05),
+		0 0 5px rgba(0, 0, 0, 0.05);
+}
+.icon-btn {
+	position: absolute;
+	top: 13px;
+	border: none;
+	background: none;
+	padding: 0;
+	line-height: 0;
+	cursor: pointer;
+}
+.icon-btn img {
+	width: 100%;
 }
 .s-box .search-icon {
 	width: 20px;
 	opacity: .4;
-	position: absolute;
-	top: 13px;
 	left: 14px;
-	cursor: pointer;
 }
 .s-box .mic-icon {
 	width: 18px;
-	position: absolute;
-	top: 13px;
 	right: 24px;
-	cursor: pointer;
 }
 .s-btn {
 	border: 1px solid transparent;
 	padding: 9px 15px;
-	color: #222222;
+	color: #222;
 	font-size: 14px;
 	border-radius: 4px;
 	display: inline-block;
@@ -157,6 +154,14 @@ nav button {
 .s-btn:hover {
 	border: 1px solid #aaa;
 }
+/* outline: none above hides the default focus ring, so show one for keyboard users. */
+nav button:focus-visible,
+.s-btn:focus-visible,
+.icon-btn:focus-visible {
+	outline: 2px solid #4285f4;
+	outline-offset: 2px;
+}
+
 .lang {
 	margin-top: 30px;
 	text-align: center;
@@ -170,16 +175,9 @@ nav button {
 .lang a:hover {
 	text-decoration: underline;
 }
+
 footer {
 	background: #f2f2f2;
-}
-footer h4 {
-	color: rgba(0,0,0, 0.54);
-	font-size: 15px;
-	line-height: 39.5px;
-	font-weight: 400;
-	padding-left: 29px;
-	border: 1px solid #eee;
 }
 footer a {
 	color: #5f6368;
@@ -202,15 +200,30 @@ footer a:hover {
 	padding-right: 18.7px;
 }
 
-.google-blue{
-	color: #4285f4
+.google-blue {
+	color: #4285f4;
 }
-.google-red{
-	color: #ea4335
+.google-red {
+	color: #ea4335;
 }
-.google-yellow{
-	color: #fbbc05
+.google-yellow {
+	color: #fbbc05;
 }
-.google-green{
-	color: #34a853
+.google-green {
+	color: #34a853;
+}
+
+.not-found {
+	text-align: center;
+	margin-top: 40px;
+	padding: 0 16px;
+	font-size: 15px;
+	line-height: 24px;
+	color: #222;
+}
+.not-found a {
+	color: #1a0dab;
+}
+.not-found a:hover {
+	text-decoration: underline;
 }

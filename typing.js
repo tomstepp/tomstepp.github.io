@@ -5,94 +5,90 @@ const RESUME_URL = RESUME_ID + ".pdf?v=" + RESUME_VERSION;
 const RESUME_TAB = RESUME_ID + "_" + RESUME_VERSION;
 
 const carouselText = [
-  { text: "I'm a senior software engineer on the Google Cloud Dataflow team", color: "black" },
-  { text: "I work on large-scale, distributed software systems", color: "black" }
-]
+  "I'm a senior software engineer on the Google Cloud Dataflow team",
+  "I work on large-scale, distributed software systems"
+];
 
-var theFormWasClicked = false;
+let typewriterStopped = false;
 
-$(document).ready(async function () {
-  $("a.resume-link").attr({ href: RESUME_URL, target: RESUME_TAB });
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("a.resume-link").forEach(function (link) {
+    link.href = RESUME_URL;
+    link.target = RESUME_TAB;
+  });
+
+  const box = textbox();
   // The textbox is a textarea so long text wraps; keep Enter submitting like a search box.
-  $("#textbox").on("keydown", function (e) {
+  box.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       e.preventDefault();
       openResume();
     }
-  }).on("input", fitTextbox);
-  $(window).on("resize", fitTextbox);
-  carousel(carouselText, "#textbox")
+  });
+  box.addEventListener("input", fitTextbox);
+  // Focus covers both clicking and tabbing into the box.
+  box.addEventListener("focus", stopTypewriter);
+  window.addEventListener("resize", fitTextbox);
+
+  // Skip the animation for visitors who prefer reduced motion.
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    box.placeholder = carouselText[0];
+    return;
+  }
+  carousel(carouselText);
 });
 
-async function typeSentence(sentence, eleRef, delay = 60) {
-  const letters = sentence.split("");
-  let i = 0;
-  while (i < letters.length && !theFormWasClicked) {
-    await waitForMs(delay);
-    document.getElementById("textbox").value += letters[i];
-    fitTextbox();
-    i++;
-  }
-  return;
+function textbox() {
+  return document.getElementById("textbox");
 }
 
-async function deleteSentence(eleRef, delay = 30) {
-  let val = document.getElementById("textbox").value;
-  let valsize = val.length;
-  while (valsize > 0 && !theFormWasClicked) {
-    await waitForMs(delay);
-    document.getElementById("textbox").value = val.slice(0, -1);
-    fitTextbox();
-    val = document.getElementById("textbox").value;
-    valsize = val.length;
-  }
-}
-
-async function carousel(carouselList, eleRef) {
-  let i = 0;
-  //while(true) {
-  while (!theFormWasClicked) {
-    updateFontColor(eleRef, carouselList[i].color)
-    await typeSentence(carouselList[i].text, eleRef);
+// Type and delete each sentence in turn until the visitor focuses the textbox.
+async function carousel(sentences) {
+  for (let i = 0; !typewriterStopped; i = (i + 1) % sentences.length) {
+    await typeSentence(sentences[i]);
     await waitForMs(1500);
-    await deleteSentence(eleRef);
+    await deleteSentence();
     await waitForMs(500);
-    i++
-    if (i >= carouselList.length) {
-      i = 0;
-    }
   }
 }
 
-function updateFontColor(eleRef, color) {
-  $(eleRef).css('color', color);
+async function typeSentence(sentence, delay = 60) {
+  for (const letter of sentence) {
+    await waitForMs(delay);
+    if (typewriterStopped) return;
+    textbox().value += letter;
+    fitTextbox();
+  }
+}
+
+async function deleteSentence(delay = 30) {
+  while (textbox().value.length > 0) {
+    await waitForMs(delay);
+    if (typewriterStopped) return;
+    textbox().value = textbox().value.slice(0, -1);
+    fitTextbox();
+  }
 }
 
 // Grow or shrink the textbox to fit its text.
 function fitTextbox() {
-  const box = document.getElementById("textbox");
+  const box = textbox();
   box.style.height = "auto";
   box.style.height = (box.scrollHeight + box.offsetHeight - box.clientHeight) + "px";
 }
 
 function waitForMs(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function stopTypewriter() {
-  theFormWasClicked = true;
-  document.getElementById("textbox").value = "";
+// Clear the typewriter text once, so later clicks keep whatever the visitor typed.
+function stopTypewriter() {
+  if (typewriterStopped) return;
+  typewriterStopped = true;
+  textbox().value = "";
   fitTextbox();
-  document.getElementById("textbox").style.color = "black";
 }
 
-async function startTypewriter() {
-  theFormWasClicked = false;
-  document.getElementById("textbox").value = "";
-  document.getElementById("textbox").style.color = "black";
-  carousel(carouselText, "#textbox")
-}
-
-async function openResume() {
+function openResume() {
   window.open(RESUME_URL, RESUME_TAB);
 }
