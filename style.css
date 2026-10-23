@@ -289,10 +289,14 @@ footer a:hover {
 [data-theme="dark"] nav img {
 	mix-blend-mode: screen;
 }
+/* Grey in dark mode, to match the search buttons. */
 [data-theme="dark"] nav .sign-in {
-	border-color: #8ab4f8;
-	background: #8ab4f8;
-	color: #202124;
+	border-color: #303134;
+	background: #303134;
+	color: #e8eaed;
+}
+[data-theme="dark"] nav .sign-in:hover {
+	border-color: #5f6368;
 }
 [data-theme="dark"] .s-box .s-input:hover,
 [data-theme="dark"] .s-box .s-input:focus {
