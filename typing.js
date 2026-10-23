@@ -30,6 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
   box.addEventListener("focus", stopTypewriter);
   window.addEventListener("resize", fitTextbox);
 
+  updateThemeButton();
+  // Follow system theme changes unless the visitor picked a theme with the button.
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
+    if (savedTheme() === null) setTheme(e.matches ? "dark" : "light");
+  });
+
   // Skip the animation for visitors who prefer reduced motion.
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     box.placeholder = carouselText[0];
@@ -87,6 +93,32 @@ function stopTypewriter() {
   typewriterStopped = true;
   textbox().value = "";
   fitTextbox();
+}
+
+function toggleTheme() {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  setTheme(next);
+  try {
+    localStorage.setItem("theme", next);
+  } catch (e) {}
+}
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  updateThemeButton();
+}
+
+function savedTheme() {
+  try {
+    return localStorage.getItem("theme");
+  } catch (e) {
+    return null;
+  }
+}
+
+function updateThemeButton() {
+  const dark = document.documentElement.dataset.theme === "dark";
+  document.querySelector(".theme-btn").setAttribute("aria-pressed", String(dark));
 }
 
 function openResume() {

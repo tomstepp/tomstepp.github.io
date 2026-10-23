@@ -15,8 +15,27 @@
 	font-family: arial, sans-serif;
 }
 :root {
-	/* The page is designed light only; stop browsers from darkening form controls. */
 	color-scheme: light;
+	--bg: #fff;
+	--text: rgba(0, 0, 0, 0.87);
+	--text-muted: #5f6368;
+	--input-border: #ddd;
+	--input-hover-border: #fff;
+	--link: #1a0dab;
+	--footer-bg: #f2f2f2;
+	--footer-border: #ddd;
+}
+/* Google's dark palette. typing.js and the inline script in <head> set data-theme. */
+:root[data-theme="dark"] {
+	color-scheme: dark;
+	--bg: #202124;
+	--text: #e8eaed;
+	--text-muted: #9aa0a6;
+	--input-border: #5f6368;
+	--input-hover-border: transparent;
+	--link: #8ab4f8;
+	--footer-bg: #171717;
+	--footer-border: #313335;
 }
 body {
 	display: flex;
@@ -24,7 +43,7 @@ body {
 	min-height: 100vh;
 	/* dvh excludes mobile browser toolbars, so the footer sits at the visible bottom. */
 	min-height: 100dvh;
-	background: #fff;
+	background: var(--bg);
 }
 
 .google-word {
@@ -52,7 +71,7 @@ nav a {
 	display: inline-block;
 	line-height: 24px;
 	font-weight: 400;
-	color: rgba(0, 0, 0, 0.87);
+	color: var(--text);
 	cursor: pointer;
 	padding: 5px 6.7px;
 }
@@ -69,7 +88,7 @@ nav img {
 nav img:hover {
 	opacity: .8;
 }
-nav button {
+nav .sign-in {
 	border: 1px solid #4285f4;
 	font-weight: bold;
 	outline: none;
@@ -79,6 +98,37 @@ nav button {
 	border-radius: 3px;
 	margin-left: 7px;
 	cursor: pointer;
+}
+.theme-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	padding: 0;
+	margin-right: 4px;
+	border: none;
+	border-radius: 50%;
+	background: none;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+.theme-btn:hover {
+	background: rgba(128, 128, 128, 0.15);
+}
+.theme-btn svg {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+	fill: currentColor;
+}
+/* Show the moon in light mode and the sun in dark mode. */
+.theme-btn .sun,
+[data-theme="dark"] .theme-btn .moon {
+	display: none;
+}
+[data-theme="dark"] .theme-btn .sun {
+	display: block;
 }
 
 .section-1 {
@@ -92,8 +142,9 @@ nav button {
 }
 .s-box .s-input {
 	display: block;
-	border: 1px solid #ddd;
-	color: rgba(0, 0, 0, 0.87);
+	border: 1px solid var(--input-border);
+	background: var(--bg);
+	color: var(--text);
 	font-size: 16px;
 	padding: 13px;
 	line-height: 20px;
@@ -108,7 +159,7 @@ nav button {
 }
 .s-box .s-input:hover,
 .s-box .s-input:focus {
-	border: 1px solid #fff;
+	border: 1px solid var(--input-hover-border);
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.05),
 		0 0 2px rgba(0, 0, 0, 0.05),
 		0 0 3px rgba(0, 0, 0, 0.05),
@@ -155,9 +206,10 @@ nav button {
 	border: 1px solid #aaa;
 }
 /* outline: none above hides the default focus ring, so show one for keyboard users. */
-nav button:focus-visible,
+nav .sign-in:focus-visible,
 .s-btn:focus-visible,
-.icon-btn:focus-visible {
+.icon-btn:focus-visible,
+.theme-btn:focus-visible {
 	outline: 2px solid #4285f4;
 	outline-offset: 2px;
 }
@@ -170,17 +222,17 @@ nav button:focus-visible,
 }
 .lang a {
 	margin-left: 5px;
-	color: #1a0dab;
+	color: var(--link);
 }
 .lang a:hover {
 	text-decoration: underline;
 }
 
 footer {
-	background: #f2f2f2;
+	background: var(--footer-bg);
 }
 footer a {
-	color: #5f6368;
+	color: var(--text-muted);
 	display: inline-block;
 	padding: 12px 11.3px;
 	font-size: 14px;
@@ -189,7 +241,7 @@ footer a:hover {
 	text-decoration: underline;
 }
 .links {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid var(--footer-border);
 	display: flex;
 }
 .link-1 {
@@ -222,8 +274,39 @@ footer a:hover {
 	color: #222;
 }
 .not-found a {
-	color: #1a0dab;
+	color: var(--link);
 }
 .not-found a:hover {
 	text-decoration: underline;
+}
+
+/* Dark-mode tweaks that don't fit a variable. */
+[data-theme="dark"] nav img,
+[data-theme="dark"] .s-box .search-icon {
+	filter: invert(1);
+}
+/* menu.png has a white background; screen blending hides it once inverted to black. */
+[data-theme="dark"] nav img {
+	mix-blend-mode: screen;
+}
+[data-theme="dark"] nav .sign-in {
+	border-color: #8ab4f8;
+	background: #8ab4f8;
+	color: #202124;
+}
+[data-theme="dark"] .s-box .s-input:hover,
+[data-theme="dark"] .s-box .s-input:focus {
+	background: #303134;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.28);
+}
+[data-theme="dark"] .s-btn {
+	background: #303134;
+	color: #e8eaed;
+}
+[data-theme="dark"] .s-btn:hover {
+	border-color: #5f6368;
+}
+[data-theme="dark"] .lang,
+[data-theme="dark"] .not-found {
+	color: #bdc1c6;
 }

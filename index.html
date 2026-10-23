@@ -32,21 +32,31 @@
       }
    }
    </script>
+   <script>
+      // Apply the saved or system theme before the page paints, so it doesn't flash.
+      try { var storedTheme = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = storedTheme ||
+         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+   </script>
    <!-- CSS -->
-   <link rel="stylesheet" href="style.css?v=20261023">
+   <link rel="stylesheet" href="style.css?v=20261023c">
    <!-- Javascript -->
-   <script src="typing.js?v=20261023" defer></script>
+   <script src="typing.js?v=20261023c" defer></script>
 </head>
 
 <body>
    <!-- Navigation Bar -->
    <nav>
+      <button type="button" class="theme-btn" onclick="toggleTheme()" aria-label="Dark mode" aria-pressed="false" title="Toggle dark mode">
+         <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-9.8-3.14c0-1.81.89-3.42 2.26-4.4A9.6 9.6 0 0 0 12 3z"/></svg>
+         <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M11 1h2v3h-2zM11 20h2v3h-2zM1 11h3v2H1zM20 11h3v2h-3zM4.2 5.6l1.4-1.4 2.1 2.1-1.4 1.4zM16.3 17.7l1.4-1.4 2.1 2.1-1.4 1.4zM4.2 18.4l2.1-2.1 1.4 1.4-2.1 2.1zM16.3 6.3l2.1-2.1 1.4 1.4-2.1 2.1z"/></svg>
+      </button>
       <a href="TomStepp_Resume.pdf" class="resume-link">Gmail</a>
       <a href="TomStepp_Resume.pdf" class="resume-link">Images</a>
       <a href="TomStepp_Resume.pdf" class="resume-link" aria-label="Resume">
          <img src="img/menu.png" alt="">
       </a>
-      <button type="button" onclick="openResume()">Sign In</button>
+      <button type="button" class="sign-in" onclick="openResume()">Sign In</button>
    </nav>
    <!-- Main Content -->
    <section class="section-1">

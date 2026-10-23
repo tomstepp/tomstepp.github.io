@@ -6,7 +6,13 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>404 Not Found | Tom Stepp</title>
    <link rel="icon" href="/img/icon.png">
-   <link rel="stylesheet" href="/style.css">
+   <script>
+      // Apply the saved or system theme before the page paints, so it doesn't flash.
+      try { var storedTheme = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = storedTheme ||
+         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+   </script>
+   <link rel="stylesheet" href="/style.css?v=20261023c">
 </head>
 
 <body>
