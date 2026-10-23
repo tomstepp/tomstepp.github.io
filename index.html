@@ -1,66 +1,75 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Tom Stepp</title>
-      <link rel="icon"  href="img/icon.png">
-      <!-- CSS -->
-      <link rel="stylesheet" href="style.css">
-      <!-- Javascript -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-      <script src="typing.js"></script>
-   </head>
-   <body>
-      <!-- Navigation Bar -->
-      <nav>
-         <a href="TomStepp_Resume.pdf" target="TJS_Resume">Gmail</a>
-         <a href="TomStepp_Resume.pdf" target="TJS_Resume">Images</a>
-         <a href="TomStepp_Resume.pdf" target="TJS_Resume">
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="description" content="Tom Stepp, software engineer on Google Cloud Dataflow.">
+   <meta property="og:title" content="Tom Stepp">
+   <meta property="og:description" content="Software engineer on Google Cloud Dataflow.">
+   <meta property="og:url" content="https://tomstepp.com">
+   <meta property="og:type" content="website">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tom Stepp</title>
+   <link rel="icon" href="img/icon.png">
+   <!-- CSS -->
+   <link rel="stylesheet" href="style.css">
+   <!-- Javascript -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+   <script src="typing.js"></script>
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+   <nav>
+      <a href="TomStepp_Resume.pdf" class="resume-link">Gmail</a>
+      <a href="TomStepp_Resume.pdf" class="resume-link">Images</a>
+      <a href="TomStepp_Resume.pdf" class="resume-link">
          <img src="img/menu.png">
-         </a>
-         <button onclick="openResume()">Sign In</button>
-      </nav>
-      <!-- Main Content -->
-      <section class="section-1">
-         <!-- Name in Google styling -->
-         <p class="google-word">
-            <span class="google-letter google-blue">T</span>
-            <span class="google-letter google-red">o</span>
-            <span class="google-letter google-yellow">m</span>
-            <span class="google-letter">&nbsp;</span>
-            <span class="google-letter google-blue">S</span>
-            <span class="google-letter google-green">t</span>
-            <span class="google-letter google-red">e</span>
-            <span class="google-letter google-blue">p</span>
-            <span class="google-letter google-red">p</span>
-         </p>
-         <!-- Search Form -->
-         <form>
-            <br><br>
-            <div class="s-box">
-               <img onclick="openResume()" src="img/search.svg" class="search-icon">
-               <input onclick="stopTypewriter()" id="textbox" type="text" class="s-input">
-               <img onclick="openResume()" src="img/mic.png" class="mic-icon">
-               <input onclick="openResume()" type="submit" class="s-btn" value="Google Search">
-               <input onclick="openResume()" type="submit" class="s-btn" value="I'm Feeling Lucky">
-            </div>
-         </form>
-         <!-- Note below search -->
-         <div class="lang">
-            <a href="TomStepp_Resume.pdf" target="TJS_Resume">Want to learn more about my experience?</a>
+      </a>
+      <button onclick="openResume()">Sign In</button>
+   </nav>
+   <!-- Main Content -->
+   <section class="section-1">
+      <!-- Name in Google styling -->
+      <p class="google-word">
+         <span class="google-letter google-blue">T</span>
+         <span class="google-letter google-red">o</span>
+         <span class="google-letter google-yellow">m</span>
+         <span class="google-letter">&nbsp;</span>
+         <span class="google-letter google-blue">S</span>
+         <span class="google-letter google-green">t</span>
+         <span class="google-letter google-red">e</span>
+         <span class="google-letter google-blue">p</span>
+         <span class="google-letter google-red">p</span>
+      </p>
+      <!-- Search Form -->
+      <form onsubmit="openResume(); return false;">
+         <br><br>
+         <div class="s-box">
+            <img onclick="openResume()" src="img/search.svg" class="search-icon">
+            <input onclick="stopTypewriter()" id="textbox" type="text" class="s-input">
+            <img onclick="openResume()" src="img/mic.png" class="mic-icon">
+            <input type="submit" class="s-btn" value="Google Search">
+            <input type="submit" class="s-btn" value="I'm Feeling Lucky">
          </div>
-      </section>
-      <!-- Footer -->
-      <footer>
-         <div class="links">
-            <div class="link-1">
-               <a href="TomStepp_Resume.pdf" target="TJS_Resume">About</a>
-            </div>
-            <div class="link-2">
-               <a href="TomStepp_Resume.pdf" target="TJS_Resume">Privacy</a>
-               <a href="TomStepp_Resume.pdf" target="TJS_Resume">Terms</a>
-            </div>
+      </form>
+      <!-- Note below search -->
+      <div class="lang">
+         <a href="TomStepp_Resume.pdf" class="resume-link">Want to learn more about my experience?</a>
+      </div>
+   </section>
+   <!-- Footer -->
+   <footer>
+      <div class="links">
+         <div class="link-1">
+            <a href="TomStepp_Resume.pdf" class="resume-link">About</a>
          </div>
-      </footer>
-   </body>
+         <div class="link-2">
+            <a href="TomStepp_Resume.pdf" class="resume-link">Privacy</a>
+            <a href="TomStepp_Resume.pdf" class="resume-link">Terms</a>
+         </div>
+      </div>
+   </footer>
+</body>
+
 </html>
